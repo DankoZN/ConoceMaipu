@@ -1,0 +1,65 @@
+<ion-header class="ion-padding" >
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/avatarmaipu.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+    <ion-title class="ion-text-center">CONOCE MAIPÚ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding " >  
+  <ion-list>    
+  <ion-item color="secondary" *ngFor="let c of componentes"
+            [routerLink]="c.redirecTo"
+            detail=true>
+    <ion-icon [name]="c.icon" slot="start" class="colorletra"></ion-icon>
+    {{ c.name }}    
+  </ion-item>
+  </ion-list>
+
+  <br> 
+
+  <ion-card >    
+    <ion-card-header> 
+      <ion-card-title class="ion-text-center colorTitulo">Bienvenid@ a Maipú</ion-card-title>
+      <br> 
+      <ion-img src="assets/paisajeMaipu.jpg"></ion-img>
+       <ion-card-subtitle class="ion-text-center colorsubtitulo">“Si el patrimonio no se conoce, 
+         no se quiere y si no se quiere, no se cuida”</ion-card-subtitle>
+    </ion-card-header>  
+  </ion-card>  
+  <ion-card > 
+    <p class="ion-padding colorparrafo"> 
+      Esta guía te llevará a conocer los rincones mas hermosos e históricos de Maipú, esta increíble comuna de Santiago de Chile, ubicada en el sector surponiente de la ciudad.  
+      Dónde se llevó a cabo la afamada Batalla de Maipú, la que fue un hito en la consolidación de la Independencia de Chile.
+      Dentro de los principales atractivos turísticos que ofrece esta maravillosa comuna se encuentran varios monumentos que rinden honor a esta batalla, además de un sinfín de lugares que 
+      te van a encantar.  
+    </p>   
+  </ion-card>
+
+  <ion-card>
+
+    <ion-item color="success" href="https://www.red.cl/planifica-tu-viaje//" class="ion-activated" target="_blank">
+      <ion-icon class="colorletra" name="footsteps" slot="start"></ion-icon>
+      <ion-label class="colorletra">Planifica tu viaje</ion-label>
+    </ion-item>
+
+  </ion-card>
+    <ion-card>
+    <ion-item color="warning"  href="https://www.bcn.cl/siit/mapoteca/comuna_view?dato=Comuna%20de%20Maip%C3%BA" class="ion-activated" target="_blank">
+      <ion-icon class="colorletra" name="earth" slot="start"></ion-icon>
+      <ion-label class="colorletra">Mapa</ion-label>
+    </ion-item>
+  </ion-card>
+  
+
+</ion-content>

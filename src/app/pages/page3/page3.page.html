@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+       defaultHref="/"
+        text="Volver"
+        color="primary"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/avatarmaipu.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">CONOCE MAIPU</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <br>
+  <ion-card-header color="secondary" > 
+    <ion-card-title class="ion-text-center colorletra">Únete</ion-card-title>      
+  </ion-card-header> 
+  <br>
+
+<ion-card class="ion-padding">
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()"> 
+    
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input type="username" placeholder="miusuario123"
+                 name="username" [(ngModel)]= "usuario.username"
+                 
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" placeholder="micorreo@maipu.cl"
+                 name="email" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="amomaipu123"
+                 name="password" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ingrese su edad</ion-label>
+      <ion-input type="number" placeholder="99"
+                 name="number" [(ngModel)]= "usuario.edad"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nacionalidad</ion-label>
+      <ion-input type="name" placeholder="nacionalidad"
+                 name="name" [(ngModel)]= "usuario.nacionalidad"                 
+                 required>
+      </ion-input>
+    </ion-item>
+  
+    <ion-button [disabled] ="formulario.invalid"
+                type="submit" expand="block" routerLink="/inicio" color="warning">
+        Enviar datos
+    </ion-button>
+  
+  </form>
+
+
+</ion-card>
+
+</ion-content>
