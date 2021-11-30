@@ -21,9 +21,25 @@ export class AppComponent {
       redirecTo: '/page2'
     },
     {
-      icon: 'person-add-outline', 
+      icon: 'sunny-outline', 
       name: 'Únete', 
       redirecTo: '/page3'
+    },
+    
+    {
+      icon: 'log-in-outline', 
+      name: 'Login', 
+      redirecTo: '/login'
+    },
+    {
+      icon: 'person-add', 
+      name: 'Registro', 
+      redirecTo: '/registro'
+    },
+    {
+      icon: 'calendar-outline', 
+      name: 'Feriados en Chile', 
+      redirecTo: '/feriados'
     },
   ]
   constructor(private menuController: MenuController) {}

@@ -1,9 +1,9 @@
-<ion-header class="ion-padding" >
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar color="tertiary" class="ion-padding" >
     
     <ion-buttons slot="start">
       <ion-button (click)="mostrarMenu()">
-        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="menu-outline" color="light"></ion-icon>
       </ion-button>
     </ion-buttons>
     
@@ -32,7 +32,9 @@
     <ion-card-header> 
       <ion-card-title class="ion-text-center colorTitulo">Bienvenid@ a Maipú</ion-card-title>
       <br> 
+      
       <ion-img src="assets/paisajeMaipu.jpg"></ion-img>
+      <br> 
        <ion-card-subtitle class="ion-text-center colorsubtitulo">“Si el patrimonio no se conoce, 
          no se quiere y si no se quiere, no se cuida”</ion-card-subtitle>
     </ion-card-header>  
@@ -50,7 +52,7 @@
 
     <ion-item color="success" href="https://www.red.cl/planifica-tu-viaje//" class="ion-activated" target="_blank">
       <ion-icon class="colorletra" name="footsteps" slot="start"></ion-icon>
-      <ion-label class="colorletra">Planifica tu viaje</ion-label>
+      <ion-label class="colorletra1">Planifica tu viaje</ion-label>
     </ion-item>
 
   </ion-card>
@@ -61,5 +63,23 @@
     </ion-item>
   </ion-card>
   
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button href="https://www.facebook.com/municipalidadmaipuchile" color="facebook" target="_blank"><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://twitter.com/muni_maipu/status/1406860000631398400?lang=en" color="twitter" target="_blank"><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://www.youtube.com/watch?v=7Sf3j9a97QU" target="_blank" color="youtube"><ion-icon name="logo-youtube"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button href="https://www.instagram.com/muni_maipu/?hl=en" target="_blank"><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://google.cl" target="_blank"><ion-icon name="logo-google"></ion-icon></ion-fab-button>
+      <ion-fab-button href="https://github.com/DankoZN/Torres_Zamarin_007D" target="_blank"><ion-icon name="logo-github"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+
+  </ion-fab>
 
 </ion-content>

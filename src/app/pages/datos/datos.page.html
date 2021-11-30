@@ -1,0 +1,102 @@
+
+<ion-header>
+
+  <ion-toolbar color="tertiary" class="ion-padding" >
+    <ion-buttons slot="start">
+      <ion-back-button 
+       defaultHref="/"
+        text="Volver"
+        color="light"
+        mode="ios"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <ion-img src="/assets/avatarmaipu.jpg"></ion-img>
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center" >CONOCE MAIPÚ</ion-title>
+    
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    <p class="ion-padding colorparrafo"> Comparte con la comunidad tus lugares favoritos de Maipú.
+    </p>
+  </ion-card>
+
+  <ion-card>
+  <ion-item>
+    <ion-label position="fixed">Nombre: </ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.nomLugar"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label position="fixed">Dirección: </ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.direccion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Descripción: </ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.descripcion"></ion-input>
+  </ion-item>
+
+  <br>
+  <ion-button (click)="addDatos()" expand="block" color="success" shape="round" >
+    Agregar Lugar Favorito
+  </ion-button>
+  <br>
+</ion-card>
+  
+
+  <ion-list #myList>
+    <ion-card>        
+      <ion-list-header>
+        <ion-label class="ion-text-center colorTitulo">Lugares Favoritos Compartidos</ion-label>
+      </ion-list-header>
+    </ion-card>
+
+    <ion-card>     
+      <ion-list>
+        <ion-item-sliding *ngFor="let dato of datos">
+          <ion-item>
+            <ion-label color="primary" > 
+              <ion-text color="dark">
+                <br>
+                <p>Lugar Favorito:</p>
+              </ion-text>
+              <p>{{dato.nomLugar}}</p>
+              <br>
+              <ion-text color="dark">
+                <p>Dirección:</p>
+              </ion-text>
+              <ion-text color="secondary">              
+                <p>{{dato.direccion}}</p>
+              </ion-text>
+              <br>
+              <ion-text color="dark">
+                <p>Descripción:</p>
+              </ion-text>
+              <ion-text color="secondary">  
+                <p>{{dato.descripcion}}</p>
+              </ion-text>
+              <br>
+              <ion-text color="dark"> 
+              <p>{{dato.modified | date: 'short'}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="success" (click)="updateDatos(dato)">Actualizar Fecha</ion-item-option>
+            <ion-item-option color="danger" (click)="deleteDatos(dato)">Eliminar</ion-item-option> 
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-card>
+
+  </ion-list>
+</ion-content>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresarGuard } from './ingresar.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
 
 const routes: Routes = [
 
@@ -20,6 +22,27 @@ const routes: Routes = [
     path: 'page3',
     loadChildren: () => import('./pages/page3/page3.module').then( m => m.Page3PageModule)
   },
+  {
+    path: 'feriados',
+    loadChildren: () => import('./pages/feriados/feriados.module').then( m => m.FeriadosPageModule)
+  },
+  {
+    path: 'datos',
+    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule),
+    canActivate: [NoIngresadoGuard]
+    
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard]
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate: [NoIngresadoGuard]
+  },
+ 
 ];
 
 @NgModule({

@@ -1,0 +1,58 @@
+<ion-header >
+  <ion-toolbar color="tertiary" class="ion-padding" >
+    
+    <ion-buttons slot="start">
+      <ion-back-button 
+       defaultHref="/"
+       text="Volver"
+       color="light"
+       mode="ios"></ion-back-button>
+   </ion-buttons>
+
+   <ion-buttons slot="end">
+    <ion-avatar>
+      <ion-img src="/assets/avatarmaipu.jpg"></ion-img>
+    </ion-avatar>
+  </ion-buttons>
+
+    <ion-title class="ion-text-center">CONOCE MAIPÚ</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card-header color="secondary" > 
+    <ion-card-title class="ion-text-center colorletra">Feriados en Chile</ion-card-title>      
+  </ion-card-header> 
+
+  <br>
+  <ion-card >
+    <p class="ion-padding colorparrafo"> Planea tu visita con anticipación, 
+      recueda que hay lugares que permanecen cerrados en días feriados.
+      </p>
+    </ion-card>
+
+  <ion-grid fixed>
+    <ion-card > 
+      <ion-img src="assets/calendario-2021-chile.jpg"></ion-img>
+      </ion-card > 
+    <ion-row>
+      
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+                *ngFor = "let feriado of feriados; let i=index">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                <span class="text">{{feriado.date}}</span>
+                <p class="feriados-nombre"> {{feriado.title}}</p>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p class="feriados-description">{{feriado.extra}}</p>
+            </ion-card-content>
+          </ion-card>                 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
